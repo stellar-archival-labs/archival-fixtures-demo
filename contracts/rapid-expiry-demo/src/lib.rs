@@ -2,8 +2,8 @@
 
 //! rapid-expiry-demo — a deliberately short-lived Soroban contract.
 //!
-//! This contract exists to give [`soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel)
-//! and [`action-state-watch`](https://github.com/Aycode01/action-state-watch) a
+//! This contract exists to give [`soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel)
+//! and [`action-state-watch`](https://github.com/stellar-archival-labs/action-state-watch) a
 //! **real**, decaying, archivable testnet entry to watch — not a synthetic mock.
 //!
 //! It deliberately maintains exactly **one persistent entry** and never extends

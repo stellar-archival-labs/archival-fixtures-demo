@@ -64,7 +64,7 @@ Before hitting record, confirm the following are ready:
 open against the sentinel repo. Build it from source once, before recording:
 
 ```bash
-git clone https://github.com/Aycode01/soroban-state-sentinel
+git clone https://github.com/stellar-archival-labs/soroban-state-sentinel
 cd soroban-state-sentinel
 cargo build --release --bin soroban-state-sentinel -p sentinel-cli
 export PATH="$PWD/target/release:$PATH"
@@ -197,7 +197,7 @@ Point out:
 Open in browser:
 
 ```
-https://github.com/Aycode01/archival-fixtures-demo/actions/workflows/test-contract.yml
+https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/workflows/test-contract.yml
 ```
 
 Point out:
@@ -280,7 +280,7 @@ Expected: `120960` (the network minimum TTL, post-restore).
 > `TESTNET_THROWAWAY_SECRET_KEY` Actions secret, and it is not confirmed set. If it
 > is missing the workflow fails immediately with a clear error rather than doing
 > anything partial. Verify before you record this scene:
-> `gh secret list --repo Aycode01/archival-fixtures-demo`.
+> `gh secret list --repo stellar-archival-labs/archival-fixtures-demo`.
 
 > **Talking point:** One `RestoreFootprintOp` brings the entry from Archived back
 > to Healthy. The cost is a few stroops. This is the remediation path
@@ -302,7 +302,7 @@ curl -s https://soroban-testnet.stellar.org \
 # expect: {"result":{"status":"healthy",...}}
 
 # Sentinel has no published releases (issue #7) — build it once, before recording.
-# git clone https://github.com/Aycode01/soroban-state-sentinel
+# git clone https://github.com/stellar-archival-labs/soroban-state-sentinel
 # cd soroban-state-sentinel && cargo build --release --bin soroban-state-sentinel -p sentinel-cli
 # export PATH="$PWD/target/release:$PATH" && cd -
 
@@ -320,7 +320,7 @@ open "https://stellar.expert/explorer/testnet/contract/CAEDHSOD3TXIAZF2BZMMNX7A2
 # (Linux: xdg-open)
 
 # ---- 4. CI green (browser) -------------------------------------------------
-open "https://github.com/Aycode01/archival-fixtures-demo/actions/workflows/test-contract.yml"
+open "https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/workflows/test-contract.yml"
 
 # ---- 5. Restore — ONLY once the entry has archived --------------------------
 # Re-check first; expect a positive integer (still live) until ~2026-09-16.

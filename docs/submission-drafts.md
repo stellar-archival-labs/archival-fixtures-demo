@@ -48,7 +48,7 @@ action-state-watch  (GitHub Action, TypeScript, cron)   ── wraps ──▶  
    archival-fixtures-demo  ──── supplies a real, live, decaying testnet entry ─┘
 ```
 
-**`soroban-state-sentinel`** ([`Aycode01/soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel))
+**`soroban-state-sentinel`** ([`stellar-archival-labs/soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel))
 is the core CLI. It connects to a Soroban RPC endpoint, reads the TTL of every
 ledger entry associated with a deployed contract, classifies each into health
 bands (Healthy / ExpiringSoon / Critical / Archived), computes exact stroop costs
@@ -57,14 +57,14 @@ unsigned `ExtendFootprintTTLOp` / `RestoreFootprintOp` XDR. It **never holds a
 private key and never submits a transaction** — its output is meant to be signed
 by a human, a multisig, or a separately-secured keeper.
 
-**`action-state-watch`** ([`Aycode01/action-state-watch`](https://github.com/Aycode01/action-state-watch))
+**`action-state-watch`** ([`stellar-archival-labs/action-state-watch`](https://github.com/stellar-archival-labs/action-state-watch))
 wraps that CLI as a GitHub Action. On a cron schedule it reads a `contracts.yml`
 manifest, invokes the sentinel per listed contract, routes severity-graded alerts
 to Slack, Discord, or GitHub Issues, deduplicates notifications per contract, and
 uploads unsigned restore XDR as a workflow artifact. Its config loader lives in
-[`src/config.ts`](https://github.com/Aycode01/action-state-watch/blob/main/src/config.ts).
+[`src/config.ts`](https://github.com/stellar-archival-labs/action-state-watch/blob/main/src/config.ts).
 
-**`archival-fixtures-demo`** ([`Aycode01/archival-fixtures-demo`](https://github.com/Aycode01/archival-fixtures-demo))
+**`archival-fixtures-demo`** ([`stellar-archival-labs/archival-fixtures-demo`](https://github.com/stellar-archival-labs/archival-fixtures-demo))
 is the fixture. It provides a real, live, decaying testnet contract — exactly one
 persistent entry (`VALUE`, contract
 `CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4`) — plus the scripts and
@@ -152,12 +152,12 @@ Every link below was fetched live on 2026-09-14; nothing here is from memory.
 | What | Link | Verified status |
 |---|---|---|
 | Live demo contract (testnet) | https://stellar.expert/explorer/testnet/contract/CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4 | HTTP 200 |
-| Fixture repo | https://github.com/Aycode01/archival-fixtures-demo | public |
-| Sentinel CLI repo | https://github.com/Aycode01/soroban-state-sentinel | public, pushed 2026-09-14T08:06Z |
-| Action wrapper repo | https://github.com/Aycode01/action-state-watch | public, pushed 2026-09-11T09:22Z |
-| CI status (this repo) | https://github.com/Aycode01/archival-fixtures-demo/workflows/test-contract/badge.svg | **passing** — latest `main` run [#34836835786](https://github.com/Aycode01/archival-fixtures-demo/actions/runs/34836835786) succeeded 2026-09-14T11:10Z |
-| Sentinel JSON schema | https://github.com/Aycode01/soroban-state-sentinel/blob/main/SCHEMA.md | current version `1.1.0` |
-| Consumer config loader | https://github.com/Aycode01/action-state-watch/blob/main/src/config.ts | authoritative schema for `contracts.yml` |
+| Fixture repo | https://github.com/stellar-archival-labs/archival-fixtures-demo | public |
+| Sentinel CLI repo | https://github.com/stellar-archival-labs/soroban-state-sentinel | public, pushed 2026-09-14T08:06Z |
+| Action wrapper repo | https://github.com/stellar-archival-labs/action-state-watch | public, pushed 2026-09-11T09:22Z |
+| CI status (this repo) | https://github.com/stellar-archival-labs/archival-fixtures-demo/workflows/test-contract/badge.svg | **passing** — latest `main` run [#34836835786](https://github.com/Aycode01/archival-fixtures-demo/actions/runs/34836835786) succeeded 2026-09-14T11:10Z |
+| Sentinel JSON schema | https://github.com/stellar-archival-labs/soroban-state-sentinel/blob/main/SCHEMA.md | current version `1.1.0` |
+| Consumer config loader | https://github.com/stellar-archival-labs/action-state-watch/blob/main/src/config.ts | authoritative schema for `contracts.yml` |
 | Open PR (validation + docs) | https://github.com/Aycode01/archival-fixtures-demo/pull/12 | open, `contract-tests` **passing**, awaiting merge |
 | Program page | https://www.drips.network/wave/stellar | HTTP 200 — "no active or upcoming Waves" |
 | Program Terms & Rules | https://docs.drips.network/wave/terms-and-rules/ | HTTP 200 — §3.1 repo admission is discretionary |
@@ -216,7 +216,7 @@ correcting during the 2026-09-14 pass and are worth knowing about:
   evidence was backwards, and the secret half of the issue remains unmet.
 - **#7** was closed as out-of-scope for this repo with a note that an equivalent
   issue "should be opened" in the sentinel repo. That issue was never actually
-  opened; `Aycode01/soroban-state-sentinel` currently has zero issues, so the
+  opened; `stellar-archival-labs/soroban-state-sentinel` currently has zero issues, so the
   release-binaries need is tracked nowhere. Consumers still build the sentinel
   from source (see this repo's Prerequisites).
 

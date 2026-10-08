@@ -23,7 +23,7 @@ pairs it with the tooling to watch the decay, get alerted, and remediate:
 ## Why it exists
 
 The sibling repos
-[`soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel)
+[`soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel)
 and `action-state-watch` scan and remediate contract state. They need a real,
 live, decaying testnet entry to test against — not a synthetic mock. This
 repo provides it, with real transcripts of every step.

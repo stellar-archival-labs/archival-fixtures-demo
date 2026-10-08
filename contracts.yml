@@ -1,7 +1,7 @@
 # contracts.yml — fixture manifest for the archival-fixtures-demo suite, in the
 # shape the action-state-watch consumer actually loads.
 #
-# Schema source of truth: Aycode01/action-state-watch, `src/config.ts`
+# Schema source of truth: stellar-archival-labs/action-state-watch, `src/config.ts`
 # (`loadConfig` / `validateContractEntry` / `validateAlertConfig`), read
 # 2026-09-14 once that repo became public (issue #4). That loader reads
 # `network`, `contracts[]` and `alert`, and SILENTLY DROPS unknown keys — which

@@ -33,7 +33,7 @@ one sitting.
   (includes `stellar network start` / `stellar container start`)
 - Docker (used by `stellar container start` under the hood)
 - `soroban-state-sentinel` on PATH (build from
-  [`Aycode01/soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel))
+  [`stellar-archival-labs/soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel))
 - `jq`, `python3` (stdlib only)
 
 Verify:
@@ -170,7 +170,7 @@ fully ephemeral — no testnet transactions, no testnet lumens used.
 → Start Docker Desktop (or `sudo systemctl start docker` on Linux) and retry.
 
 **`soroban-state-sentinel: command not found`**  
-→ Build from source: `cargo install --path . --git https://github.com/Aycode01/soroban-state-sentinel`
+→ Build from source: `cargo install --path . --git https://github.com/stellar-archival-labs/soroban-state-sentinel`
 
 **`SOROBAN_NETWORK_PASSPHRASE` guard fires**  
 → Ensure `export SOROBAN_NETWORK_PASSPHRASE="Standalone Network ; February 2017"` is set.

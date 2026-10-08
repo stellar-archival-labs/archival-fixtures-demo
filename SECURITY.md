@@ -29,7 +29,7 @@ path where a mainnet key could be accepted, a secret leaking into logs or
 commits, or anything that could compromise the TESTNET-ONLY posture —
 **do not open a public issue.** Report it privately:
 
-- Open a [private security advisory](https://github.com/Aycode01/archival-fixtures-demo/security/advisories/new)
+- Open a [private security advisory](https://github.com/stellar-archival-labs/archival-fixtures-demo/security/advisories/new)
   on this repository, or
 - email the maintainer (see the repository owner) with full reproduction
   steps.

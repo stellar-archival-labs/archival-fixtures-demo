@@ -94,7 +94,7 @@ require_stellar_cli() {
 require_sentinel() {
     require_cmd "$SENTINEL_BIN" \
         "soroban-state-sentinel is not installed. It is the sibling repo in this suite; build it first \
-(https://github.com/Aycode01/soroban-state-sentinel) and install the binary on PATH, or set SENTINEL_BIN."
+(https://github.com/stellar-archival-labs/soroban-state-sentinel) and install the binary on PATH, or set SENTINEL_BIN."
 }
 
 # Asserts this repo's TESTNET-ONLY posture. Call from every script.

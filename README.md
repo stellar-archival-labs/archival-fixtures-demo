@@ -9,7 +9,7 @@ makes **Soroban state archival** observable end-to-end on Stellar **testnet**:
 deploy a contract holding one persistent entry, watch its TTL decay over
 ~7 days, see the entry get archived, and restore it.
 
-[![CI](https://github.com/Aycode01/archival-fixtures-demo/actions/workflows/test-contract.yml/badge.svg)](https://github.com/Aycode01/archival-fixtures-demo/actions/workflows/test-contract.yml)
+[![CI](https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/workflows/test-contract.yml/badge.svg)](https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/workflows/test-contract.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <p align="center">
@@ -47,7 +47,7 @@ repo builds the smallest possible contract that will inevitably archive —
 exactly one persistent entry, created at the network-minimum TTL and never
 extended — and pairs it with the tooling to watch the decay, get alerted, and
 remediate. It exists to give
-[`soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel)
+[`soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel)
 and `action-state-watch` a real, decaying, archivable testnet entry to watch.
 
 ## Repo layout
@@ -112,7 +112,7 @@ CI workflows. The longer reference reads are in [`docs/`](docs/):
 - `bash` >= 4, `curl`, `jq`
 - [`stellar` CLI](https://developers.stellar.org/docs/tools/cli/stellar-cli)
 - `soroban-state-sentinel` on PATH — sibling repo in this suite
-  ([`Aycode01/soroban-state-sentinel`](https://github.com/Aycode01/soroban-state-sentinel));
+  ([`stellar-archival-labs/soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel));
   override the binary name with `SENTINEL_BIN`
 - Rust toolchain with the `wasm32v1-none` target (Rust 1.84+; soroban-sdk 27
   no longer supports the legacy `wasm32-unknown-unknown` target) only if you

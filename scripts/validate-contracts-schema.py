@@ -3,7 +3,7 @@
 action-state-watch consumer schema.
 
 The schema enforced here is transcribed from the actual consumer, not invented:
-`Aycode01/action-state-watch`, `src/config.ts` (`loadConfig` /
+`stellar-archival-labs/action-state-watch`, `src/config.ts` (`loadConfig` /
 `validateContractEntry` / `validateAlertConfig`), read 2026-09-14 once that repo
 became public. The consumer is what decides whether a config file is usable, so
 its rules are the ones that matter.
