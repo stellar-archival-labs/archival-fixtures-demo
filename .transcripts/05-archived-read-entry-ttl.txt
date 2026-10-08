@@ -1,0 +1,15 @@
+# Read-only TTL read of the live demo entry after it archived.
+# Captured 2026-10-08T08:09:33Z.
+#
+# Command:
+#   python scripts/read-entry-ttl.py \
+#     --contract-id CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4
+#
+# Output (stderr line, then the TTL in ledgers on stdout):
+entry has no liveUntilLedgerSeq (latest ledger 5084678)
+0
+#
+# Corroborating scheduled CI run (same contract, same day):
+#   demo-scan.yml, 2026-10-08T03:38Z, band=Archived
+#   https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/runs/37723689615
+#   => contract=CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4 ttl=0 ledgers (~0h) band=Archived

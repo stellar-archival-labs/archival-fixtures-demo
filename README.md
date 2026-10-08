@@ -27,12 +27,12 @@ deploy a contract holding one persistent entry, watch its TTL decay over
 
 ## Status at a glance
 
-| Surface | Current status |
+| Surface | Current status (checked 2026-10-08) |
 |---|---|
 | Live testnet entry | `CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4` (key `VALUE`, persistent) |
-| Health band | Healthy (~120,900 ledgers ≈ 7 days) — see `.transcripts/` for real captures |
-| Timeline | Deployed 2026-09-09 (ledger 4,583,709); Critical ≈ 6 days later, Archived ≈ 7 |
-| CI | `test-contract.yml` green on push; `demo-scan.yml` scheduled every 6 h (setup: `CONTRACT_ID` variable) |
+| Health band | **Archived** — TTL `0` (latest ledger `5,084,678`); real read-only capture in `.transcripts/05-archived-read-entry-ttl.txt` |
+| Timeline | Deployed 2026-09-09 (ledger 4,583,709); decayed through Critical to Archived on the real ~7-day testnet schedule |
+| CI | `test-contract.yml` green on push; `demo-scan.yml` (every 6 h) now reports `band=Archived` and fails red, as designed |
 | Contract unit tests | 5/5 passing |
 
 ## The idea in one paragraph
@@ -111,9 +111,21 @@ CI workflows. The longer reference reads are in [`docs/`](docs/):
 
 - `bash` >= 4, `curl`, `jq`
 - [`stellar` CLI](https://developers.stellar.org/docs/tools/cli/stellar-cli)
-- `soroban-state-sentinel` on PATH — sibling repo in this suite
-  ([`stellar-archival-labs/soroban-state-sentinel`](https://github.com/stellar-archival-labs/soroban-state-sentinel));
-  override the binary name with `SENTINEL_BIN`
+- `soroban-state-sentinel` on PATH — only needed by the sentinel-driven
+  scripts (`SENTINEL_BIN` overrides the binary name). Install the prebuilt
+  release binary for your platform, or build from source:
+
+  ```bash
+  # prebuilt (Linux x86_64 shown; see the releases page for macOS targets)
+  VERSION=v0.1.0; TARGET=x86_64-unknown-linux-gnu
+  BASE="https://github.com/stellar-archival-labs/soroban-state-sentinel/releases/download/${VERSION}"
+  ASSET="soroban-state-sentinel-${VERSION}-${TARGET}.tar.gz"
+  curl -fsSLO "${BASE}/${ASSET}" && curl -fsSLO "${BASE}/${ASSET}.sha256"
+  sha256sum --check "${ASSET}.sha256" && tar -xzf "${ASSET}"
+
+  # or from the tagged source
+  cargo install --git https://github.com/stellar-archival-labs/soroban-state-sentinel --tag v0.1.0 sentinel-cli --locked
+  ```
 - Rust toolchain with the `wasm32v1-none` target (Rust 1.84+; soroban-sdk 27
   no longer supports the legacy `wasm32-unknown-unknown` target) only if you
   need to build the contract WASM or run its tests
@@ -206,15 +218,18 @@ numbers, not placeholders):
 - `01-deploy-healthy.txt` — deploy + initialize + starting sentinel scan
 - `02-scan-healthy.json` — sentinel `scan --json` of the live entry
 - `03-wait-check.txt` — the TTL watcher's one-shot check
-- `04-read-entry-ttl.txt` — the off-chain TTL read used by CI
+- `04-read-entry-ttl.txt` — the off-chain TTL read used by CI (Healthy)
+- `05-archived-read-entry-ttl.txt` — the same off-chain read after archival (TTL `0`)
 
-As of 2026-09-09 the demo entry is deployed
-(`CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4`, testnet)
-and decaying in real time: Healthy at ~120,900 ledgers, Critical in ~6
-days, Archived in ~7. The Critical/Archived/restore phases of the
-pipeline complete on that schedule — run `./scripts/trigger-eviction-wait.sh
---until archived` (or watch the scheduled CI) to observe them, and append
-their transcripts here when they land.
+As of **2026-10-08** the demo entry is **Archived**: TTL `0` (latest ledger
+`5,084,678`). The scheduled `demo-scan.yml` run of 2026-10-08T03:38Z agrees
+(`band=Archived`, run
+[#37723689615](https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/runs/37723689615)).
+The entry was deployed 2026-09-09 (ledger 4,583,709) and decayed on the real
+~7-day testnet schedule. The **Healthy** and **Archived** bands are captured;
+the **restore** transcript is not yet captured — the restore flow needs the
+TESTNET-ONLY throwaway key (`.deploy/testnet-throwaway.secret`), which is not
+present in this checkout.
 
 ## Faster rehearsal on a standalone network
 
