@@ -175,6 +175,20 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # The capture steps above wrote 07/08 as UNTRACKED files in the working
+          # tree. When the branch already exists it already tracks those same
+          # paths, and `git checkout` refuses to clobber them ("untracked working
+          # tree files would be overwritten by checkout"). Move the freshly
+          # captured files aside, switch to the branch, then put them back so the
+          # `git add` below stages this capture. (`git checkout -f` would get past
+          # the refusal, but it silently discards the fresh capture in favour of
+          # the branch's older copy — never use it here.)
+          BACKUP_DIR="$(mktemp -d)"
+          mv .transcripts/07-restore.txt "$BACKUP_DIR/07-restore.txt"
+          if [[ -f .transcripts/08-scan-post-restore.json ]]; then
+            mv .transcripts/08-scan-post-restore.json "$BACKUP_DIR/08-scan-post-restore.json"
+          fi
+
           # Fixed branch name: reuse it if it already exists so re-runs update
           # the same PR instead of opening a second one.
           if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
@@ -184,16 +198,26 @@ jobs:
             git checkout -b "$BRANCH"
           fi
 
-          git add .transcripts/07-restore.txt
-          [[ -f .transcripts/08-scan-post-restore.json ]] && git add .transcripts/08-scan-post-restore.json
-
-          if git diff --cached --quiet; then
-            echo "No transcript changes to commit — the captured run matched what is already on the branch."
-            exit 0
+          mv "$BACKUP_DIR/07-restore.txt" .transcripts/07-restore.txt
+          if [[ -f "$BACKUP_DIR/08-scan-post-restore.json" ]]; then
+            mv "$BACKUP_DIR/08-scan-post-restore.json" .transcripts/08-scan-post-restore.json
           fi
 
-          git commit -m "chore(transcripts): capture restore transcript [automated]"
-          git push --force-with-lease origin "$BRANCH"
+          git add .transcripts/07-restore.txt
+          if [[ -f .transcripts/08-scan-post-restore.json ]]; then
+            git add .transcripts/08-scan-post-restore.json
+          fi
+
+          # Commit and push only when the capture actually changed. Either way we
+          # fall through to the PR step below: a branch that already carries the
+          # identical transcript can still have no PR open (the case that left
+          # this workflow red), and exiting here would strand it forever.
+          if git diff --cached --quiet; then
+            echo "Captured transcript matches what is already on $BRANCH — nothing new to commit."
+          else
+            git commit -m "chore(transcripts): capture restore transcript [automated]"
+            git push --force-with-lease origin "$BRANCH"
+          fi
 
           if [[ -n "$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[0].number')" ]]; then
             echo "PR for $BRANCH is already open — the push above updated it."
