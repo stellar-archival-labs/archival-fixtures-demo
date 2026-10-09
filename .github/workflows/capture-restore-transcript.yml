@@ -8,11 +8,11 @@
 # "all transcripts present" condition was unreachable and #2 could never close
 # itself. This workflow supplies exactly that missing file.
 #
-# It deliberately does NOT modify demo-restore.yml: that workflow's execution
-# path cannot be exercised from CI until the TESTNET_THROWAWAY_SECRET_KEY secret
-# exists (see issue #5), so leaving it untouched keeps the untestable surface as
-# small as possible. The finished run's real log is fetched instead — which is
-# also a more faithful transcript than anything a run could report about itself.
+# It deliberately does NOT modify demo-restore.yml: it only records the finished
+# run's real log, which is a more faithful transcript than anything a run could
+# report about itself. demo-restore.yml needs no stored key — when
+# TESTNET_THROWAWAY_SECRET_KEY is unset it generates and friendbot-funds a
+# throwaway testnet key at runtime.
 #
 # On a successful demo-restore run this:
 #   1. fetches the finished run's log via `gh run view --log`
@@ -24,13 +24,12 @@
 #      run updates that PR instead of stacking a new one
 #
 # A failed demo-restore run is never captured: committing its log as a "restore
-# transcript" would present a broken run as demo evidence. If the secret is
-# unset, demo-restore.yml fails fast and this workflow stays green by doing
-# nothing.
+# transcript" would present a broken run as demo evidence. If demo-restore.yml
+# fails, this workflow stays green by doing nothing.
 #
-# Direct pushes to main are blocked (branch protection sets enforce_admins:true,
-# which applies to the GITHUB_TOKEN as well), so the transcript lands via a PR
-# the owner merges. Once merged, the next scheduled demo-scan lets
+# Direct pushes to main are blocked (branch protection requires a pull request
+# on main, which applies to the GITHUB_TOKEN as well), so the transcript lands
+# via a PR the owner merges. Once merged, the next scheduled demo-scan lets
 # capture-transcript.yml see all three transcripts and it comments on issue #2.
 #
 # ⚠️  TESTNET ONLY. Read-only: this workflow reads a TTL via RPC and reads an

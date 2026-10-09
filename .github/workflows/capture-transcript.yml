@@ -8,8 +8,8 @@
 #
 #   1. Fetches the latest scan output (TTL + band) via scripts/read-entry-ttl.py
 #   2. Writes it to .transcripts/0X-scan-<band>.json
-#   3. Opens a PR targeting main (direct push is blocked by branch protection;
-#      enforce_admins:true applies to the GITHUB_TOKEN bot too).
+#   3. Opens a PR targeting main (branch protection requires a pull request on
+#      main, so the GITHUB_TOKEN bot cannot push the transcript there directly).
 #
 # For the Archived band it also triggers demo-restore.yml automatically
 # so the restore run can be captured as .transcripts/07-restore.txt.
