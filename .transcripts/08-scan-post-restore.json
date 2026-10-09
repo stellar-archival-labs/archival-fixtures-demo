@@ -1,0 +1,10 @@
+{
+  "captured_at": "2026-10-09T07:35:29Z",
+  "band": "Healthy",
+  "phase": "post-restore",
+  "contract_id": "CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4",
+  "ttl_ledgers": 120956,
+  "latest_ledger": 5101548,
+  "source": "capture-restore-transcript.yml workflow (automated)",
+  "note": "Real capture from live testnet decay \u2014 not a simulation."
+}

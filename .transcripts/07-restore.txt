@@ -1,0 +1,320 @@
+# Restore transcript — demo-restore.yml (TESTNET ONLY)
+# run_id: 37899800679
+# run_url: https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/runs/37899800679
+# captured_at: 2026-10-09T07:35:27Z
+# captured_by: capture-restore-transcript.yml
+#
+# This is the real log of a real run against Stellar testnet — not a
+# simulation. The entry was archived by real elapsed ledger time and
+# restored with RestoreFootprintOp.
+
+restore	Set up job	﻿2026-10-09T07:34:33.6393767Z Current runner version: '2.337.0'
+restore	Set up job	2026-10-09T07:34:33.6421365Z ##[group]Runner Image Provisioner
+restore	Set up job	2026-10-09T07:34:33.6422795Z Hosted Compute Agent
+restore	Set up job	2026-10-09T07:34:33.6423469Z Version: 20261002.596
+restore	Set up job	2026-10-09T07:34:33.6424114Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+restore	Set up job	2026-10-09T07:34:33.6424926Z Build Date: 2026-10-02T22:28:27Z
+restore	Set up job	2026-10-09T07:34:33.6425630Z Worker ID: {c2885bc6-4a42-49be-b810-b81bd8778615}
+restore	Set up job	2026-10-09T07:34:33.6426393Z Region: centralus
+restore	Set up job	2026-10-09T07:34:33.6427048Z Cloud: Azure
+restore	Set up job	2026-10-09T07:34:33.6427592Z ##[endgroup]
+restore	Set up job	2026-10-09T07:34:33.6429623Z ##[group]Operating System
+restore	Set up job	2026-10-09T07:34:33.6430296Z Ubuntu
+restore	Set up job	2026-10-09T07:34:33.6430896Z 24.04.5
+restore	Set up job	2026-10-09T07:34:33.6431466Z LTS
+restore	Set up job	2026-10-09T07:34:33.6432343Z ##[endgroup]
+restore	Set up job	2026-10-09T07:34:33.6433026Z ##[group]Runner Image
+restore	Set up job	2026-10-09T07:34:33.6433639Z Image: ubuntu-24.04
+restore	Set up job	2026-10-09T07:34:33.6434190Z Version: 20261004.327.1
+restore	Set up job	2026-10-09T07:34:33.6435387Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+restore	Set up job	2026-10-09T07:34:33.6437189Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+restore	Set up job	2026-10-09T07:34:33.6438159Z ##[endgroup]
+restore	Set up job	2026-10-09T07:34:33.6439727Z ##[group]GITHUB_TOKEN Permissions
+restore	Set up job	2026-10-09T07:34:33.6442214Z Contents: read
+restore	Set up job	2026-10-09T07:34:33.6442956Z Metadata: read
+restore	Set up job	2026-10-09T07:34:33.6443573Z ##[endgroup]
+restore	Set up job	2026-10-09T07:34:33.6445657Z Secret source: Actions
+restore	Set up job	2026-10-09T07:34:33.6446744Z Cache mode: write
+restore	Set up job	2026-10-09T07:34:33.6447825Z Prepare workflow directory
+restore	Set up job	2026-10-09T07:34:33.6795606Z Prepare all required actions
+restore	Set up job	2026-10-09T07:34:33.6846664Z Getting action download info
+restore	Set up job	2026-10-09T07:34:33.9574983Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+restore	Set up job	2026-10-09T07:34:34.1435786Z Complete job name: restore
+restore	Run actions/checkout@v4	﻿2026-10-09T07:34:34.2342233Z ##[group]Run actions/checkout@v4
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2343204Z with:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2343787Z   repository: stellar-archival-labs/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2348098Z   token: ***
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2348547Z   ssh-strict: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2348989Z   ssh-user: git
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2349436Z   persist-credentials: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2349929Z   clean: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2350378Z   sparse-checkout-cone-mode: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2350904Z   fetch-depth: 1
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2351332Z   fetch-tags: false
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2351770Z   show-progress: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2352404Z   lfs: false
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2352825Z   submodules: false
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2353275Z   set-safe-directory: true
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2353793Z   allow-unsafe-pr-checkout: false
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.2354732Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3441246Z Syncing repository: stellar-archival-labs/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3444937Z ##[group]Getting Git version info
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3446673Z Working directory is '/home/runner/work/archival-fixtures-demo/archival-fixtures-demo'
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3448963Z [command]/usr/bin/git version
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3533454Z git version 2.55.0
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3590432Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3607995Z Temporarily overriding HOME='/home/runner/work/_temp/0f0f25e3-4f15-4690-b376-202626ac7fe3' before making global git config changes
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3610434Z Adding repository directory to the temporary git global config as a safe directory
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3615357Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/archival-fixtures-demo/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3672059Z Deleting the contents of '/home/runner/work/archival-fixtures-demo/archival-fixtures-demo'
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3677851Z ##[group]Initializing the repository
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3683013Z [command]/usr/bin/git init /home/runner/work/archival-fixtures-demo/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3795090Z hint: Using 'master' as the name for the initial branch. This default branch name
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3797271Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3798947Z hint: to use in all of your new repositories, which will suppress this warning,
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3799829Z hint: call:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3800505Z hint:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3801179Z hint: 	git config --global init.defaultBranch <name>
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3802768Z hint:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3803474Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3804531Z hint: 'development'. The just-created branch can be renamed via this command:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3805367Z hint:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3805876Z hint: 	git branch -m <name>
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3806629Z hint:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3807671Z hint: Disable this message with "git config set advice.defaultBranchName false"
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3808873Z Initialized empty Git repository in /home/runner/work/archival-fixtures-demo/archival-fixtures-demo/.git/
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3814195Z [command]/usr/bin/git remote add origin https://github.com/stellar-archival-labs/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3864000Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3864811Z ##[group]Disabling automatic garbage collection
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3869351Z [command]/usr/bin/git config --local gc.auto 0
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3903968Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3904972Z ##[group]Setting up auth
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3913072Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.3952736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4323347Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4363248Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4595382Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4634899Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4866253Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4908798Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4910310Z ##[group]Fetching the repository
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.4920458Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +35e9b192e6e2961ae0a5ccaa458bcc6f5d2992fc:refs/remotes/origin/main
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9038557Z From https://github.com/stellar-archival-labs/archival-fixtures-demo
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9040328Z  * [new ref]         35e9b192e6e2961ae0a5ccaa458bcc6f5d2992fc -> origin/main
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9044537Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9046114Z ##[group]Determining the checkout info
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9047625Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9054233Z [command]/usr/bin/git sparse-checkout disable
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9111195Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9147517Z ##[group]Checking out the ref
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9152677Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9269282Z Switched to a new branch 'main'
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9274537Z branch 'main' set up to track 'origin/main'.
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9280946Z ##[endgroup]
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9328368Z [command]/usr/bin/git log -1 --format=%H
+restore	Run actions/checkout@v4	2026-10-09T07:34:34.9357463Z 35e9b192e6e2961ae0a5ccaa458bcc6f5d2992fc
+restore	Install stellar-cli	﻿2026-10-09T07:34:34.9611466Z ##[group]Run curl -fsSL https://raw.githubusercontent.com/stellar/stellar-cli/main/install.sh | bash
+restore	Install stellar-cli	2026-10-09T07:34:34.9613402Z ^[[36;1mcurl -fsSL https://raw.githubusercontent.com/stellar/stellar-cli/main/install.sh | bash^[[0m
+restore	Install stellar-cli	2026-10-09T07:34:34.9614471Z ^[[36;1mecho "$HOME/.local/bin" >> "$GITHUB_PATH"^[[0m
+restore	Install stellar-cli	2026-10-09T07:34:34.9877062Z shell: /usr/bin/bash -e {0}
+restore	Install stellar-cli	2026-10-09T07:34:34.9877949Z ##[endgroup]
+restore	Install stellar-cli	2026-10-09T07:34:35.1598969Z Detected platform: linux (x86_64-unknown-linux-gnu)
+restore	Install stellar-cli	2026-10-09T07:34:35.1612232Z Fetching latest release...
+restore	Install stellar-cli	2026-10-09T07:34:35.3799635Z Latest version: 28.1.0
+restore	Install stellar-cli	2026-10-09T07:34:35.3802913Z Downloading from: https://github.com/stellar/stellar-cli/releases/download/v28.1.0/stellar-cli-28.1.0-x86_64-unknown-linux-gnu.tar.gz
+restore	Install stellar-cli	2026-10-09T07:34:35.8291030Z Extracting archive...
+restore	Install stellar-cli	2026-10-09T07:34:36.5980476Z Installing stellar to /usr/local/bin...
+restore	Install stellar-cli	2026-10-09T07:34:36.6135677Z main: line 570: printf: write error: Broken pipe
+restore	Install stellar-cli	2026-10-09T07:34:36.6230300Z 
+restore	Install stellar-cli	2026-10-09T07:34:36.6231455Z [OK] Stellar CLI installed successfully!
+restore	Install stellar-cli	2026-10-09T07:34:36.6232283Z 
+restore	Install stellar-cli	2026-10-09T07:34:36.6232670Z Location: /usr/local/bin/stellar
+restore	Install stellar-cli	2026-10-09T07:34:36.6233233Z Version: 28.1.0
+restore	Install stellar-cli	2026-10-09T07:34:36.6233498Z 
+restore	Install stellar-cli	2026-10-09T07:34:36.6235982Z Run 'stellar --version' to verify the installation.
+restore	Install stellar-cli	2026-10-09T07:34:36.6236607Z 
+restore	Install stellar-cli	2026-10-09T07:34:36.6236869Z Smart contract Rust environment summary:
+restore	Install stellar-cli	2026-10-09T07:34:36.6237569Z   [OK] rustup
+restore	Install stellar-cli	2026-10-09T07:34:36.6238147Z   [OK] cargo
+restore	Install stellar-cli	2026-10-09T07:34:36.6238814Z   [OK] rustc
+restore	Install stellar-cli	2026-10-09T07:34:36.6872790Z   [MISSING] wasm32v1-none target
+restore	Install stellar-cli	2026-10-09T07:34:36.6873369Z 
+restore	Install stellar-cli	2026-10-09T07:34:36.6873570Z Install missing target with:
+restore	Install stellar-cli	2026-10-09T07:34:36.6874024Z   rustup target add wasm32v1-none
+restore	Restore and extend the demo entry	﻿2026-10-09T07:34:36.7006614Z ##[group]Run set -euo pipefail
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7007107Z ^[[36;1mset -euo pipefail^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7007598Z ^[[36;1mRPC="https://soroban-testnet.stellar.org"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7008049Z ^[[36;1mPASSPHRASE="Test SDF Network ; September 2015"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7008473Z ^[[36;1mTHROWAWAY_ALIAS="testnet-demo-throwaway"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7008832Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7009520Z ^[[36;1m[[ -n "${CONTRACT_ID:-}" ]] || { echo "::error::CONTRACT_ID is not set — pass it as a workflow input or set the CONTRACT_ID repository variable (see workflow header)"; exit 1; }^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7010302Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7010643Z ^[[36;1m# --- Signing key. -------------------------------------------------^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7011170Z ^[[36;1m# Prefer the optional TESTNET_THROWAWAY_SECRET_KEY secret. If it is^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7011717Z ^[[36;1m# not set, generate a fresh TESTNET-ONLY throwaway key and fund it^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7012437Z ^[[36;1m# from the testnet friendbot — the restore path is permissionless, so^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7012997Z ^[[36;1m# no secret has to be stored for this demo to work.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7013395Z ^[[36;1mif [[ -z "${THROWAWAY_KEY:-}" ]]; then^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7014065Z ^[[36;1m  echo "TESTNET_THROWAWAY_SECRET_KEY not set — generating a fresh TESTNET-ONLY throwaway key and funding it with testnet lumens..."^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7014769Z ^[[36;1m  stellar keys generate "$THROWAWAY_ALIAS" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7015136Z ^[[36;1m    --as-secret --fund \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7015528Z ^[[36;1m    --rpc-url "$RPC" --network-passphrase "$PASSPHRASE"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7016040Z ^[[36;1m  # `keys generate --as-secret` stores the secret under the alias^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7016529Z ^[[36;1m  # instead of printing it; read it back the same way^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7016947Z ^[[36;1m  # scripts/deploy-and-shrink-ttl.sh does.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7017509Z ^[[36;1m  THROWAWAY_KEY="$(stellar keys show "$THROWAWAY_ALIAS" | grep -oE 'S[A-Z2-7]{55}' | head -n1 || true)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7018396Z ^[[36;1m  [[ -n "$THROWAWAY_KEY" ]] || { echo "::error::could not read the generated throwaway secret via 'stellar keys show $THROWAWAY_ALIAS'"; exit 1; }^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7019164Z ^[[36;1m  echo "generated and funded a throwaway testnet key (disposable)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7019590Z ^[[36;1mfi^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7020157Z ^[[36;1m[[ "$THROWAWAY_KEY" == S* ]] || { echo "::error::the signing key does not look like a testnet secret key — this repo is TESTNET-ONLY"; exit 1; }^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7021010Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7021371Z ^[[36;1mecho "contract=$CONTRACT_ID entry=$ENTRY_KEY rpc=$RPC (TESTNET ONLY)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7022015Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7022622Z ^[[36;1mread_ttl() { python3 scripts/read-entry-ttl.py --contract-id "$CONTRACT_ID" --entry-key "$ENTRY_KEY" --rpc-url "$RPC"; }^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7023221Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7023573Z ^[[36;1m# Restore one entry, tolerating the no-op case (the entry is already^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7024179Z ^[[36;1m# live). A real failure still surfaces: nothing is live afterwards, so^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7024657Z ^[[36;1m# the invoke/final check below fails the run.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7025020Z ^[[36;1mrestore_entry() {^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7025308Z ^[[36;1m  local what="$1"; shift^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7025619Z ^[[36;1m  echo "-> restoring ${what}..."^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7025935Z ^[[36;1m  if "$@"; then^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7026240Z ^[[36;1m    echo "   ${what}: restore submitted"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7026590Z ^[[36;1m  else^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7027183Z ^[[36;1m    echo "::warning::${what}: 'stellar contract restore' returned non-zero (already live, or restore failed — the extend step will confirm)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7027840Z ^[[36;1m  fi^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7028080Z ^[[36;1m}^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7028306Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7028599Z ^[[36;1m# --- 1. Detect the entry's state off-chain. ---^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7029170Z ^[[36;1mTTL="$(read_ttl)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7029485Z ^[[36;1mecho "pre-restore ttl=$TTL ledgers"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7029807Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7030039Z ^[[36;1mif (( TTL <= 0 )); then^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7030445Z ^[[36;1m  echo "entry is ARCHIVED — restoring with RestoreFootprintOp..."^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7030860Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7031188Z ^[[36;1m  # The demo's short TTL archives the instance, the code, and the^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7031696Z ^[[36;1m  # VALUE data entry together. Bring them all back: the instance is^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7032382Z ^[[36;1m  # restored first because its live entry carries the wasm hash we^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7032858Z ^[[36;1m  # need before the code entry can be restored.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7033247Z ^[[36;1m  restore_entry "contract instance" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7033596Z ^[[36;1m    stellar contract restore \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7033974Z ^[[36;1m      --id "$CONTRACT_ID" --source "$THROWAWAY_KEY" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7034380Z ^[[36;1m      --durability persistent \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7034789Z ^[[36;1m      --rpc-url "$RPC" --network-passphrase "$PASSPHRASE"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7035169Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7035513Z ^[[36;1m  # Read the wasm hash from the (now live) instance. Falls back to the^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7036037Z ^[[36;1m  # code key recorded in the deployment transcript so the code can^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7036531Z ^[[36;1m  # still be restored if the instance read is unavailable.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7037014Z ^[[36;1m  WASM_HASH="$(stellar contract info hash --id "$CONTRACT_ID" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7037582Z ^[[36;1m    --rpc-url "$RPC" --network-passphrase "$PASSPHRASE" 2>/dev/null || true)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7038146Z ^[[36;1m  if [[ -z "$WASM_HASH" && -f .transcripts/02-scan-healthy.json ]]; then^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7038587Z ^[[36;1m    WASM_HASH="$(python3 - <<'PY'^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7038915Z ^[[36;1mimport base64, json^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7039288Z ^[[36;1mwith open(".transcripts/02-scan-healthy.json") as fh:^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7039701Z ^[[36;1m    entries = json.load(fh)["entries"]^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7040137Z ^[[36;1mcode = next(e for e in entries if e.get("kind") == "contract_code")^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7040672Z ^[[36;1m# LedgerKey::ContractCode XDR = 4-byte type tag + 32-byte wasm hash.^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7041165Z ^[[36;1mprint(base64.b64decode(code["key_xdr"])[4:].hex())^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7041527Z ^[[36;1mPY^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7041757Z ^[[36;1m    )"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7042420Z ^[[36;1m    echo "wasm hash recovered from .transcripts/02-scan-healthy.json"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7042848Z ^[[36;1m  fi^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7043088Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7043336Z ^[[36;1m  if [[ -n "$WASM_HASH" ]]; then^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7043748Z ^[[36;1m    restore_entry "contract code (wasm ${WASM_HASH:0:12}...)" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7044173Z ^[[36;1m      stellar contract restore \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7044583Z ^[[36;1m        --wasm-hash "$WASM_HASH" --source "$THROWAWAY_KEY" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7045060Z ^[[36;1m        --rpc-url "$RPC" --network-passphrase "$PASSPHRASE"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7045444Z ^[[36;1m  else^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7045849Z ^[[36;1m    echo "::warning::could not determine the wasm hash — skipping the code restore"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7046310Z ^[[36;1m  fi^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7046544Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7046814Z ^[[36;1m  restore_entry "data entry '$ENTRY_KEY'" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7047172Z ^[[36;1m    stellar contract restore \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7047550Z ^[[36;1m      --id "$CONTRACT_ID" --key "$ENTRY_KEY" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7047975Z ^[[36;1m      --source "$THROWAWAY_KEY" --durability persistent \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7048431Z ^[[36;1m      --rpc-url "$RPC" --network-passphrase "$PASSPHRASE"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7048813Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7049208Z ^[[36;1m  echo "restores submitted — entries are live again at the network-minimum TTL"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7049823Z ^[[36;1melse^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7050167Z ^[[36;1m  echo "entry is LIVE — nothing to restore; extending as a floor"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7050575Z ^[[36;1mfi^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7050803Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7051158Z ^[[36;1m# --- 2. Raise the TTL (no-op while it is already at/above the target). ---^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7051686Z ^[[36;1mecho "extending entry to at least ${EXTEND_TO} ledgers..."^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7052232Z ^[[36;1mstellar contract invoke \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7052598Z ^[[36;1m    --id "$CONTRACT_ID" --source "$THROWAWAY_KEY" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7053067Z ^[[36;1m    --rpc-url "$RPC" --network-passphrase "$PASSPHRASE" \^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7053506Z ^[[36;1m    -- extend --ledgers "$EXTEND_TO" >/dev/null^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7053849Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7054093Z ^[[36;1m# --- 3. Verify off-chain. ---^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7054421Z ^[[36;1mFINAL_TTL="$(read_ttl)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7054849Z ^[[36;1mecho "post-restore ttl=$FINAL_TTL ledgers (~$(( FINAL_TTL * 5 / 3600 ))h)"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7055354Z ^[[36;1mecho "ttl=$FINAL_TTL" >> "$GITHUB_OUTPUT"^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7055684Z ^[[36;1m^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7056083Z ^[[36;1m[[ "$FINAL_TTL" -gt 0 ]] || { echo "::error::entry is still archived after restore"; exit 1; }^[[0m
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7124443Z shell: /usr/bin/bash -e {0}
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7124768Z env:
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7125160Z   CONTRACT_ID: CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7125633Z   THROWAWAY_KEY: 
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7125908Z   ENTRY_KEY: VALUE
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7126167Z   EXTEND_TO: 120960
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7126423Z ##[endgroup]
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7281557Z TESTNET_THROWAWAY_SECRET_KEY not set — generating a fresh TESTNET-ONLY throwaway key and funding it with testnet lumens...
+restore	Restore and extend the demo entry	2026-10-09T07:34:36.7368937Z ✅ Key saved with alias testnet-demo-throwaway in "/home/runner/.config/stellar/identity/testnet-demo-throwaway.toml"
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.1946323Z ✅ Account testnet-demo-throwaway funded on "Test SDF Network ; September 2015"
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.2057863Z generated and funded a throwaway testnet key (disposable)
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.2059405Z contract=CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4 entry=VALUE rpc=https://soroban-testnet.stellar.org (TESTNET ONLY)
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.7750286Z entry has no liveUntilLedgerSeq (latest ledger 5101539)
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.7842379Z pre-restore ttl=0 ledgers
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.7843842Z entry is ARCHIVED — restoring with RestoreFootprintOp...
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.7846969Z -> restoring contract instance...
+restore	Restore and extend the demo entry	2026-10-09T07:34:45.9489563Z ℹ️  Simulating transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:34:46.2857776Z ℹ️  Signing transaction: 9fc12e72c45877103c99b050f35eabda46ebd2a83197e2f678963e9a1fdcb2c7
+restore	Restore and extend the demo entry	2026-10-09T07:34:46.2858972Z 🌎 Sending transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:34:55.7563908Z ✅ Transaction submitted successfully!
+restore	Restore and extend the demo entry	2026-10-09T07:34:55.7565475Z 🔗 https://stellar.expert/explorer/testnet/tx/9fc12e72c45877103c99b050f35eabda46ebd2a83197e2f678963e9a1fdcb2c7
+restore	Restore and extend the demo entry	2026-10-09T07:34:55.7566827Z New ttl ledger: 5222500
+restore	Restore and extend the demo entry	2026-10-09T07:34:55.7587630Z    contract instance: restore submitted
+restore	Restore and extend the demo entry	2026-10-09T07:34:55.9505206Z -> restoring contract code (wasm a7a296180f50...)...
+restore	Restore and extend the demo entry	2026-10-09T07:34:56.1103320Z ℹ️  Simulating transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:34:56.4578799Z ℹ️  Signing transaction: 14e28481a2675df845c58202f173e49fdf9add1d5596c3b2e0316bb891da0bff
+restore	Restore and extend the demo entry	2026-10-09T07:34:56.4580234Z 🌎 Sending transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:35:05.8877108Z ✅ Transaction submitted successfully!
+restore	Restore and extend the demo entry	2026-10-09T07:35:05.8879210Z 🔗 https://stellar.expert/explorer/testnet/tx/14e28481a2675df845c58202f173e49fdf9add1d5596c3b2e0316bb891da0bff
+restore	Restore and extend the demo entry	2026-10-09T07:35:05.8881176Z New ttl ledger: 5222502
+restore	Restore and extend the demo entry	2026-10-09T07:35:05.8906718Z    contract code (wasm a7a296180f50...): restore submitted
+restore	Restore and extend the demo entry	2026-10-09T07:35:05.8907626Z -> restoring data entry 'VALUE'...
+restore	Restore and extend the demo entry	2026-10-09T07:35:06.0503539Z ℹ️  Simulating transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:35:06.3607163Z ℹ️  Signing transaction: 682e82d0d07eaba94b39dbb974fc5bfad5f1151c5bbd852513504bd3552389f5
+restore	Restore and extend the demo entry	2026-10-09T07:35:06.3608606Z 🌎 Sending transaction…
+restore	Restore and extend the demo entry	2026-10-09T07:35:15.9998474Z ✅ Transaction submitted successfully!
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.0000463Z 🔗 https://stellar.expert/explorer/testnet/tx/682e82d0d07eaba94b39dbb974fc5bfad5f1151c5bbd852513504bd3552389f5
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.0002918Z New ttl ledger: 5222504
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.0021591Z    data entry 'VALUE': restore submitted
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.0022854Z restores submitted — entries are live again at the network-minimum TTL
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.0023971Z extending entry to at least 120960 ledgers...
+restore	Restore and extend the demo entry	2026-10-09T07:35:16.8998683Z ℹ️  Simulation identified as read-only. Send by rerunning with `--send=yes`.
+restore	Restore and extend the demo entry	2026-10-09T07:35:17.1808753Z latest_ledger=5101546 live_until_ledger=5222504 ttl=120958
+restore	Restore and extend the demo entry	2026-10-09T07:35:17.1898209Z post-restore ttl=120958 ledgers (~167h)
+restore	Summarize	﻿2026-10-09T07:35:17.1972033Z ##[group]Run echo "Demo entry restored. TTL now 120958 ledgers. The scheduled demo-scan.yml should go green on its next run."
+restore	Summarize	2026-10-09T07:35:17.1972910Z ^[[36;1mecho "Demo entry restored. TTL now 120958 ledgers. The scheduled demo-scan.yml should go green on its next run."^[[0m
+restore	Summarize	2026-10-09T07:35:17.2036008Z shell: /usr/bin/bash -e {0}
+restore	Summarize	2026-10-09T07:35:17.2036275Z ##[endgroup]
+restore	Summarize	2026-10-09T07:35:17.2115407Z Demo entry restored. TTL now 120958 ledgers. The scheduled demo-scan.yml should go green on its next run.
+restore	Post Run actions/checkout@v4	﻿2026-10-09T07:35:17.2230823Z Post job cleanup.
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3069473Z [command]/usr/bin/git version
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3117814Z git version 2.55.0
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3159872Z Temporarily overriding HOME='/home/runner/work/_temp/5dcd33a6-88ac-428e-84dd-388e5e7f8349' before making global git config changes
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3161464Z Adding repository directory to the temporary git global config as a safe directory
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3166497Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/archival-fixtures-demo/archival-fixtures-demo
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3210459Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3252195Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3506771Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3538660Z http.https://github.com/.extraheader
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3553469Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3595920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3866950Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+restore	Post Run actions/checkout@v4	2026-10-09T07:35:17.3908352Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+restore	Complete job	﻿2026-10-09T07:35:17.4307531Z Cleaning up orphan processes
+restore	Complete job	2026-10-09T07:35:17.4585775Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
