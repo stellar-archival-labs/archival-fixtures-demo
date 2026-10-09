@@ -20,11 +20,12 @@
 #   1. Deploy once locally:  ./scripts/deploy-and-shrink-ttl.sh
 #   2. Actions -> Variables -> New repository variable:
 #        Name: CONTRACT_ID,  Value: <the contract id printed by step 1>
-#   3. Actions -> Secrets -> New repository secret:
+#   3. (Optional) Actions -> Secrets -> New repository secret:
 #        Name: TESTNET_THROWAWAY_SECRET_KEY,
 #        Value: <the S... key in .deploy/testnet-throwaway.secret>
-#      (the secret is not used by this read-only workflow, but demo-restore.yml
-#       needs it; keeping both setup steps together avoids surprises)
+#      (this read-only workflow never signs anything, and demo-restore.yml now
+#       generates and friendbot-funds a throwaway key when the secret is unset,
+#       so setting it is only useful for pinning a specific key)
 #   4. Run once via the "Run workflow" button (workflow_dispatch) to confirm,
 #      then let the cron take over (every 6 hours by default).
 
