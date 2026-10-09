@@ -1,7 +1,7 @@
 # Restore transcript — demo-restore.yml (TESTNET ONLY)
 # run_id: 37899800679
 # run_url: https://github.com/stellar-archival-labs/archival-fixtures-demo/actions/runs/37899800679
-# captured_at: 2026-10-09T07:35:27Z
+# captured_at: 2026-10-09T08:31:59Z
 # captured_by: capture-restore-transcript.yml
 #
 # This is the real log of a real run against Stellar testnet — not a
