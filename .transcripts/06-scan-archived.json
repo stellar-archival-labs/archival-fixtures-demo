@@ -1,0 +1,9 @@
+{
+  "captured_at": "2026-10-22T10:52:35Z",
+  "band": "Archived",
+  "contract_id": "CAEDHSOD3TXIAZF2BZMMNX7A2OKBCVE4WU7A6RWTHGGHWHJXHEQUMAT4",
+  "ttl_ledgers": 0,
+  "latest_ledger": 5328553,
+  "source": "capture-transcript.yml workflow (automated)",
+  "note": "Real capture from live testnet decay \u2014 not a simulation."
+}
